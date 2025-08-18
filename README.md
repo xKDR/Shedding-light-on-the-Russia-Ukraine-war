@@ -23,8 +23,19 @@ This repository contains all code, data, and resources required to reproduce the
 
 ## Data
 
-- **Vector boundary data:** Provided in the `data/` folder or via download links in the notebook.
-- **Satellite imagery:** Downloaded automatically by the notebook.
+
+**Vector boundary data:**
+The original vector boundary data was downloaded from [GADM.org](https://gadm.org/).
+
+Due to computational and visualization challenges, the raw shapefiles required significant preprocessing:
+
+1. For computation, Siberia and the Russian Far East were too large to be processed as single units, so these regions were subdivided.
+2. For visualization, Russia's coordinate reference system (CRS) was changed to improve map clarity.
+3. Chukotka Oblast crosses the anti-meridian in the original shapefile; we split this shape into multiple polygons for correct handling.
+
+For these reasons, we provide the processed vector data in the `data/` folder of this repository.
+
+**Satellite imagery:** Downloaded automatically by the notebook.
 
 ## Reproducibility
 
